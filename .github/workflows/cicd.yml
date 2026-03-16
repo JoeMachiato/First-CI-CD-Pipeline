@@ -60,3 +60,6 @@ jobs:
 
       - name: Wypchnięcie przetestowanego obrazu na Docker Hub-a
         run: docker push ${{ secrets.DOCKER_USERNAME }}/moje-api:latest
+
+      - name: Wdrożenie na Render
+        run: curl -f ${{ secrets.RENDER_DEPLOY_HOOK }}
