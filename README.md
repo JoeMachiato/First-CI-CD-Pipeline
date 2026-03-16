@@ -1,27 +1,27 @@
-# Simple CI/CD Pipeline (FastAPI + Docker + GitHub Actions)
+# CI/CD Pipeline with Security Scanning
 
 ![CI/CD Status](https://github.com/JoeMachiato/First-CI-CD-Pipeline/actions/workflows/cicd.yml/badge.svg)
 
-## O projekcie
-Ten projekt to kompletny, zautomatyzowany potok CI/CD (Continuous Integration / Continuous Delivery) zbudowany od zera. Służy jako demonstracja nowoczesnych praktyk DevOps.
+## Overview
+Automated pipeline for a Python-based microservice. The workflow handles code validation, container security auditing, and automated deployment to a cloud environment.
 
-Został zaprojektowany tak, aby przy każdym wypchnięciu kodu (push) do gałęzi `main`:
-1. Sprawdzić jakość kodu (Linting - `flake8`).
-2. Uruchomić testy jednostkowe (`pytest`).
-3. Zbudować nowy obraz konteneryzacyjny (`Docker`).
-4. Bezpiecznie wysłać gotowy obraz do rejestru publicznego (Docker Hub).
+## Pipeline Stages
+* **Linting**: Static code analysis using `flake8`.
+* **Testing**: Unit tests executed via `pytest`.
+* **Security**: Container vulnerability scanning with `Trivy`.
+* **Packaging**: Docker image build and push to Docker Hub.
+* **Deployment**: Continuous Deployment to Render via Webhooks.
 
-## Technologie
-* **Aplikacja:** Python, FastAPI
-* **Testy & Jakość:** Pytest, Flake8
-* **Konteneryzacja:** Docker, Docker Hub
-* **Automatyzacja (CI/CD):** GitHub Actions
+## Tech Stack
+* **Language**: Python (FastAPI)
+* **Automation**: GitHub Actions
+* **Containers**: Docker
+* **Security**: Trivy
+* **Hosting**: Render
 
-## Jak uruchomić to lokalnie?
-
-Zbudowany obraz jest dostępny publicznie na Docker Hub. Aby uruchomić aplikację na dowolnym komputerze z zainstalowanym Dockerem, wystarczy wpisać:
-
+## Access & Usage
+* **Live API**: [https://moje-api-latest.onrender.com/](https://moje-api-latest.onrender.com/)
+* **Local Run**:
 ```bash
 docker run -p 8000:8000 joemachiato97/moje-api:latest
 ```
-Po uruchomieniu, API będzie dostępne w przeglądarce pod adresem: http://localhost:8000
