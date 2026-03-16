@@ -25,3 +25,5 @@ Automated pipeline for a Python-based microservice. The workflow handles code va
 ```bash
 docker run -p 8000:8000 joemachiato97/moje-api:latest
 ```
+## Preview
+![Moja Grafika](image.png)
